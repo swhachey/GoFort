@@ -3,7 +3,7 @@ import { Nav } from "react-bootstrap"
 
 function NavBar() {
     return (
-        <Nav variant="tabs" defaultActiveKey="/home" className="navbar navbar-expand-lg navbar-dark bg-dark">
+ <Nav variant="tabs" defaultActiveKey="/home" className="navbar navbar-expand-lg navbar-dark bg-dark">
   <Nav.Item>
     <Nav.Link href="/home">GoFort</Nav.Link>
   </Nav.Item>
