@@ -15,7 +15,7 @@ function Cities() {
   };
 
     return (
-        <div className="container">
+        <div className="container searchform">
             <br/>
          <form>
               <Input
