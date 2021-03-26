@@ -6,12 +6,14 @@ import Chat from "./pages/Chat"
 import Traveled from "./pages/Traveled"
 import NoMatch from "./pages/NoMatch"
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Jumbotron from './components/Jumbotron/jumbotron';
 
 function App() {
   return (
     <BrowserRouter>
     <div className="container">
       <NavBar />
+         <Jumbotron/>
       <Switch>
       <Route exact path={["/", "/cities"]}>
       <Cities />
