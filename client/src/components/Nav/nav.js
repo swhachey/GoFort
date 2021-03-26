@@ -8,10 +8,10 @@ function NavBar() {
     <Nav.Link href="/">GoFort</Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link eventKey="link-1">Places I've Been</Nav.Link>
+    <Nav.Link href="/traveled" eventKey="link-1">Places I've Been</Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link eventKey="link-2">Chat</Nav.Link>
+    <Nav.Link href="/chat" eventKey="link-2">Chat</Nav.Link>
   </Nav.Item>
 </Nav>
     )
