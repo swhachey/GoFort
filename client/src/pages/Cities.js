@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from "react-router-dom"
+import { List, ListItem} from "../components/List/list"
 import {Input, TextArea, FormBtn} from "../components/SearchForm/searchform"
 
 
 
 function Cities() {
+    const [cities, setCities] = useState([])
     const [formObject, setFormObject] = useState({})
 
     function handleInputChange(event) {
@@ -13,6 +16,7 @@ function Cities() {
 
     return (
         <div className="container">
+            <br/>
          <form>
               <Input
                 onChange={handleInputChange}
@@ -29,9 +33,19 @@ function Cities() {
               </FormBtn>
               <br/>
               <br/>
-
             </form>
-            </div>
+          
+        {cities.length ? (
+              <List>
+                  <ListItem>
+                      <h3>API working</h3>
+                  </ListItem>
+              </List>
+            ) : (
+              <h3>No Results to Display...</h3>
+            )}
+              <br/>
+          </div>
     )
 }
 
