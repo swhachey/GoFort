@@ -14,6 +14,6 @@ export default {
   },
 
   saveCity: function(cityData) {
-    return axios.post("/api/cities", bookData);
+    return axios.post("/api/cities", cityData);
   }
 };

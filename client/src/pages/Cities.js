@@ -4,8 +4,6 @@ import { List, ListItem} from "../components/List/list"
 import {Input, TextArea, FormBtn} from "../components/SearchForm/searchform"
 import API from "../utils/API"
 
-
-
 function Cities() {
     const [cities, setCities] = useState([])
     const [formObject, setFormObject] = useState({})
@@ -27,6 +25,19 @@ function Cities() {
     setFormObject({...formObject, [name]: value})
   };
 
+   function handleFormSubmit(event) {
+    event.preventDefault();
+    if (formObject.city && formObject.country) {
+      API.saveCity({
+        city: formObject.city,
+        country: formObject.country,
+        synopsis: false
+      })
+        .then(res => loadCities())
+        .catch(err => console.log(err));
+    }
+  };
+
     return (
         <div className="container searchform">
             <br/>
@@ -34,14 +45,15 @@ function Cities() {
               <Input
                 onChange={handleInputChange}
                 name="city"
-                placeholder="What city you wanna go to?"
+                placeholder="What City? (required)"
               />
               <Input
                 onChange={handleInputChange}
                 name="country"
-                placeholder="What country you wanna go to?"
+                placeholder="What Country?"
               />
-              <FormBtn>
+              <FormBtn disabled={!(formObject.city && formObject.country)}
+                onClick={handleFormSubmit}>
                 Find City
               </FormBtn>
               <br/>
