@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { List, ListItem} from "../components/List/list"
 import {Input, TextArea, FormBtn} from "../components/SearchForm/searchform"
 import API from "../utils/API"
+import Delete from "../components/DeleteBtn/Delete"
 
 function Cities() {
     const [cities, setCities] = useState([])
@@ -19,6 +20,12 @@ function Cities() {
       )
       .catch(err => console.log(err));
   };
+
+function deleteCity(id) {
+    API.deleteCity(id)
+      .then(res => loadCities())
+      .catch(err => console.log(err));
+  }
 
     function handleInputChange(event) {
     const { name, value } = event.target;
@@ -62,9 +69,16 @@ function Cities() {
           
         {cities.length ? (
               <List>
-                  <ListItem>
-                      <h3>API working</h3>
+                {cities.map(city => (
+                  <ListItem key={city._id}>
+                    <Link to={"/cities/" + city._id}>
+                      <strong>
+                        {city.city} by {city.country}
+                      </strong>
+                    </Link>
+                  <Delete onClick={() => deleteCity(city._id)} />
                   </ListItem>
+                ))}
               </List>
             ) : (
               <h3>No Results to Display...</h3>
