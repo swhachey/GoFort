@@ -5,15 +5,6 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const databaseUrl = "gofortDB"
-const collections = ["users"]
-
-const db = mongojs(databaseUrl, collections)
-
-db.on("error", error => {
-    console.log("Database error:", error)
-})
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gofortDB");
 
 // Start the API server
 app.listen(PORT, function() {
