@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
+// This file empties the destination collection and inserts the destinations below
 
 mongoose.connect(
   process.env.MONGODB_URI ||
@@ -11,15 +11,16 @@ mongoose.connect(
 const destinationSeed = [
   {
     city: "Denver",
-    country: "Colorado",
-    visited:
-      "An imaginative place of love and light for jah."
+    country: "United States",
+    visited: true,
+
   },
   {
-    city: "Evergreen",
-    country: "Colorado",
-    visited:
-      "This town will make you bleed trees."
+    city: "London",
+    country: "England",
+    visited: false, 
+    
+
   }
 ];
 
