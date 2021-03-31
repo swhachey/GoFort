@@ -5,6 +5,15 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// const databaseUrl = "gofortDB"
+// const collections = ["destination"]
+
+// const db = mongojs(databaseUrl, collections)
+
+// db.on("error", error => {
+//     console.log("Database error:", error)
+// })
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
