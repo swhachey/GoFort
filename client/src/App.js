@@ -11,18 +11,29 @@ import{ChatEngine} from 'react-chat-engine';
 import './App.css'
 import LoginForm from './components/Chat/LoginForm'
 import ChatFeed from './components/Chat/ChatFeed';
+import LoginButton from './components/LoginButton/login-button'
+import {Auth0Provider} from '@auth0/auth0-react'
 
 
 function App() {
    if(!localStorage.getItem('username')) return(<LoginForm />)
   return (
     <BrowserRouter>
+    <Auth0Provider
+      domain = "dev-ptqzlmfp.us.auth0.com"
+      clientId = "WBj49Gh0QmpT2PnBcCJPCGOw51ksdgOE"
+      redirectUri = {window.location.origin}
+    >
     <div className="container">
       <NavBar />
          <Jumbotron/>
       <Switch>
       <Route exact path={["/", "/cities"]}>
       <Cities />
+      </Route>
+
+      <Route exact path={"/login"}>
+        <LoginButton/>
       </Route>
 
       <Route path={"/cities/:id"}>
@@ -49,6 +60,7 @@ function App() {
      
     </Switch>
     </div>
+    </Auth0Provider>
     </BrowserRouter>
   );
 }
