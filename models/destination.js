@@ -5,7 +5,7 @@ const destinationSchema = new Schema({
   city: { type: String, required: true },
   country: { type: String},
   visited: Boolean,
-  info: { type: String, required: true }
+  info: { type: String }
 
 });
 

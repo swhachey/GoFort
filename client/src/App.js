@@ -2,7 +2,6 @@ import './App.css';
 import NavBar from "./components/Nav/nav"
 import Cities from "./pages/Cities"
 import Info from "./pages/Info"
-import Chat from "./pages/Chat"
 import Traveled from "./pages/Traveled"
 import NoMatch from "./pages/NoMatch"
 import { BrowserRouter, Switch, Route } from "react-router-dom";
