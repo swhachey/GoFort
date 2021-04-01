@@ -4,6 +4,7 @@ import { Nav } from "react-bootstrap"
 import "./nav.css"
 import LoginButton from '../../components/LoginButton/login-button'
 import LogoutButton from '../../components/LogOutButton/logout-button'
+import AuthNav from '../AuthNav/AuthNav'
 
 function NavBar() {
     return (
@@ -17,11 +18,8 @@ function NavBar() {
   <Nav.Item>
     <Nav.Link href="/chat" eventKey="link-2" className="navlink">Chat</Nav.Link>
   </Nav.Item>
-  <Nav.Item>
-    <LoginButton/>
-  </Nav.Item>
-  <Nav.Item>
-    <LogoutButton/>
+  <Nav.Item position = "right">
+    <AuthNav/>
   </Nav.Item>
 </Nav>
     )
