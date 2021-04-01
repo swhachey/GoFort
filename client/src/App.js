@@ -13,6 +13,7 @@ import LoginForm from './components/Chat/LoginForm'
 import ChatFeed from './components/Chat/ChatFeed';
 import LoginButton from './components/LoginButton/login-button'
 import {Auth0Provider} from '@auth0/auth0-react'
+import LogoutButton from './components/LogOutButton/logout-button'
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
 
       <Route exact path={"/login"}>
         <LoginButton/>
+      </Route>
+      <Route exact path={"/logout"}>
+        <LogoutButton/>
       </Route>
 
       <Route path={"/cities/:id"}>
