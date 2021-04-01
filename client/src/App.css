@@ -1,5 +1,15 @@
 /* CHAT STYLES */
-* {
+.jumbotron {
+  background-image: url("https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1393&q=80");
+  background-size: 100%;
+  background-position: center;
+  font-family: "Carter One", cursive;
+  font-size: xx-large;
+  color: black;
+  filter: drop-shadow(-3px 4px 2px black);
+}
+
+.chat-feed {
   font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -217,7 +227,18 @@
   height: 100vh;
   width: 100%;
   background: rgb(117, 84, 160);
-  background: linear-gradient(90deg, rgba(117, 84, 160, 1) 7%, rgba(117, 84, 160, 1) 17%, rgba(106, 95, 168, 1) 29%, rgba(99, 103, 174, 1) 44%, rgba(87, 116, 184, 1) 66%, rgba(70, 135, 198, 1) 83%, rgba(44, 163, 219, 1) 96%, rgba(22, 188, 237, 1) 100%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(117, 84, 160, 1) 7%,
+    rgba(117, 84, 160, 1) 17%,
+    rgba(106, 95, 168, 1) 29%,
+    rgba(99, 103, 174, 1) 44%,
+    rgba(87, 116, 184, 1) 66%,
+    rgba(70, 135, 198, 1) 83%,
+    rgba(44, 163, 219, 1) 96%,
+    rgba(22, 188, 237, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -249,7 +270,6 @@
   margin-bottom: 30px;
   width: 100%;
   font-size: 2.3em;
-  ;
 }
 
 .button {
@@ -276,7 +296,7 @@
 }
 
 .button span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -297,4 +317,12 @@
   color: white;
   text-align: center;
   margin-top: 20px;
+}
+.btn {
+  padding: 200px;
+}
+
+h3 {
+  color: azure;
+  text-align: center;
 }
