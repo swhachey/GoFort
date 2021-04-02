@@ -20,6 +20,7 @@ const destinationSeed = [
     city: "London",
     country: "England",
     traveled: true, 
+    info: "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjAwNTl8MHwxfHNlYXJjaHwxfHxsb25kb258ZW58MHx8fHwxNjE3Mzg4Nzcy&ixlib=rb-1.2.1&q=80&w=200"
     
 
   }

@@ -4,8 +4,6 @@ import { List, ListItem} from "../components/List/list"
 import {Input, FormBtn} from "../components/SearchForm/searchform"
 import API from "../utils/API"
 import Delete from "../components/DeleteBtn/Delete"
-import LoginButton from '../components/LoginButton/login-button'
-import LogoutButton from '../components/LogOutButton/logout-button'
 import ViewBtn from "../components/ViewBtn/viewbtn"
 import TraveledBtn from "../components/TraveledBtn/traveled"
 
@@ -20,7 +18,7 @@ function Cities() {
   function loadCities() {
     API.getCities()
       .then(res => 
-        setCities(res.data)
+        setCities(res.data.filter(city => !city.traveled))
       )
       .catch(err => console.log(err));
   };
@@ -28,13 +26,6 @@ function Cities() {
 function deleteCity(id) {
     API.deleteCity(id)
       .then(res => loadCities())
-      .catch(err => console.log(err));
-  };
-
-  function handleSaveCity(cityData) {
-    console.log(cityData)
-    API.saveCity(cityData)
-      .then(res => alert("You Went For It!"))
       .catch(err => console.log(err));
   };
 
@@ -55,13 +46,15 @@ function deleteCity(id) {
         info: imageURL
       })
       })
+       .then(res => alert("Go For It!"))
       .then(res => loadCities())
       .catch(err => console.log(err))
     }
   };
 
-  function handleTravel(cityData) {
-    API.travelCity(cityData)
+  function handleTravel(id) {
+    API.travelCity(id)
+    .then(res => alert("You Went For It!"))
      .then(res => loadCities())
       .catch(err => console.log(err));
   }
@@ -96,7 +89,7 @@ function deleteCity(id) {
               <List>
                 {cities.map(city => (
                   <ListItem key={city._id}>
-                    <img src={city.info}/>
+                    <img src={city.info} alt={city.city}/>
                     <br/>
                     <Link to={"/cities/" + city._id}>
                       <strong>
@@ -108,12 +101,7 @@ function deleteCity(id) {
                     <div>
                     <ViewBtn link={"https://en.wikipedia.org/wiki/" + city.city}/>
                 
-                    <TraveledBtn onClick={()=>handleTravel({
-                      city: city.city,
-                      country: city.country,
-                      info: city.info,
-                      traveled: true
-                    })}/>
+                    <TraveledBtn onClick={()=>handleTravel(city._id)}/>
                   
                   <Delete onClick={() => deleteCity(city._id)} />
                   </div>

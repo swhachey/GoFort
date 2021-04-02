@@ -1,9 +1,6 @@
 import React from 'react'
-import { Link } from "react-router-dom"
 import { Nav } from "react-bootstrap"
 import "./nav.css"
-import LoginButton from '../../components/LoginButton/login-button'
-import LogoutButton from '../../components/LogOutButton/logout-button'
 import AuthNav from '../AuthNav/AuthNav'
 
 function NavBar() {

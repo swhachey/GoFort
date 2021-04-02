@@ -8,23 +8,16 @@ import ViewBtn from "../components/ViewBtn/viewbtn"
 function Saved() {
 const [cities, setCities] = useState([])
 
-// const wentCities = cities.filter(city => city.visited)
-
-console.log(cities)
-
   useEffect(() => {
     loadCities()
   }, [])
 
   function loadCities() {
     API.getCities()
-    // .then(res => 
-    //   {console.log(res.data);
-    //   res.data.filter(city => city.traveled)})
       .then(res => 
         {
           console.log(res)
-          setCities(res.data)}
+          setCities(res.data.filter(city => city.traveled))}
       )
       .catch(err => console.log(err));
   };
@@ -42,7 +35,7 @@ console.log(cities)
               <List>
                 {cities.map(city => (
                   <ListItem key={city._id}>
-                    <img src={city.info}/>
+                    <img src={city.info} alt={city.city}/>
                     <br/>
                     <Link to={"/cities/" + city._id}>
                       <strong>
