@@ -13,6 +13,10 @@ export default {
     return axios.delete("/api/cities/" + id);
   },
 
+  travelCity: function(cityData) {
+    return axios.put("/api/cities/", cityData);
+  },
+
   saveCity: function(cityData) {
     return axios.post("/api/cities", cityData);
   },
