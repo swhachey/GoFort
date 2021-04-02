@@ -12,7 +12,8 @@ const destinationSeed = [
   {
     city: "Denver",
     country: "United States",
-    visited: true,
+    visited: false,
+    info: "https://images.unsplash.com/photo-1599408169542-620fc453382c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjAwNTl8MHwxfHNlYXJjaHwxfHxkZW52ZXJ8ZW58MHx8fHwxNjE3MzgxMTQ1&ixlib=rb-1.2.1&q=80&w=200"
 
   },
   {

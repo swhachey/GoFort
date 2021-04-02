@@ -4,7 +4,8 @@ const destinationController = require("../../controllers/destinationController")
 // Matches with "/api/cities"
 router.route("/")
   .get(destinationController.findAll)
-  .post(destinationController.create);
+  .post(destinationController.create)
+  .put(destinationController.update);
 
 // Matches with "/api/cities/:id"
 router

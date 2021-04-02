@@ -60,6 +60,12 @@ function deleteCity(id) {
     }
   };
 
+  function handleTravel(cityData) {
+    API.travelCity(cityData)
+     .then(res => loadCities())
+      .catch(err => console.log(err));
+  }
+
 
     return (
       <>
@@ -95,15 +101,18 @@ function deleteCity(id) {
                     <Link to={"/cities/" + city._id}>
                       <strong>
                         {city.city},  {city.country}
+                        {city.visited}
                       </strong>
                     </Link>
                   
                     <div>
                     <ViewBtn link={"https://en.wikipedia.org/wiki/" + city.city}/>
                 
-                    <TraveledBtn onClick={()=>handleSaveCity({
+                    <TraveledBtn onClick={()=>handleTravel({
                       city: city.city,
-                      country: city.country
+                      country: city.country,
+                      info: city.info,
+                      visited: true
                     })}/>
                   
                   <Delete onClick={() => deleteCity(city._id)} />

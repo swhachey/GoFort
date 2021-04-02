@@ -32,6 +32,7 @@ const [cities, setCities] = useState([])
           {cities.length ? (
               <List>
                 {cities.map(city => (
+                  
                   <ListItem key={city._id}>
                     <img src={city.info}/>
                     <br/>
@@ -49,7 +50,7 @@ const [cities, setCities] = useState([])
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3>You havent been anywhere!</h3>
             )}
         </div>
     )
