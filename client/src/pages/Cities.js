@@ -4,13 +4,10 @@ import { List, ListItem} from "../components/List/list"
 import {Input, FormBtn} from "../components/SearchForm/searchform"
 import API from "../utils/API"
 import Delete from "../components/DeleteBtn/Delete"
-<<<<<<< HEAD
 import LoginButton from '../components/LoginButton/login-button'
 import LogoutButton from '../components/LogOutButton/logout-button'
-=======
 import ViewBtn from "../components/ViewBtn/viewbtn"
 import TraveledBtn from "../components/TraveledBtn/traveled"
->>>>>>> main
 
 function Cities() {
     const [cities, setCities] = useState([])
