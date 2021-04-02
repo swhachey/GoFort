@@ -45,13 +45,21 @@ function deleteCity(id) {
 
    function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.city) {
-      console.log(formObject.city)
+    if (formObject.city && formObject.country) {
       API.searchCity(formObject.city)
-      .then(res => setCities(res))
+      .then(res => {
+        const imageURL = res.data.results[0].urls.thumb
+       API.saveCity({
+        city: formObject.city,
+        country: formObject.country,
+        info: imageURL
+      })
+      })
+      .then(res => loadCities())
       .catch(err => console.log(err))
     }
   };
+
 
     return (
       <>
@@ -82,11 +90,14 @@ function deleteCity(id) {
               <List>
                 {cities.map(city => (
                   <ListItem key={city._id}>
+                    <img src={city.info}/>
+                    <br/>
                     <Link to={"/cities/" + city._id}>
                       <strong>
                         {city.city},  {city.country}
                       </strong>
                     </Link>
+                  
                     <div>
                     <ViewBtn link={"https://en.wikipedia.org/wiki/" + city.city}/>
                 
