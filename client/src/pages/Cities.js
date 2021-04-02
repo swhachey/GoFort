@@ -112,7 +112,7 @@ function deleteCity(id) {
                       city: city.city,
                       country: city.country,
                       info: city.info,
-                      visited: true
+                      traveled: true
                     })}/>
                   
                   <Delete onClick={() => deleteCity(city._id)} />
