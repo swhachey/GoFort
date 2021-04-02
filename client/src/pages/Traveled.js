@@ -33,6 +33,8 @@ const [cities, setCities] = useState([])
               <List>
                 {cities.map(city => (
                   <ListItem key={city._id}>
+                    <img src={city.info}/>
+                    <br/>
                     <Link to={"/cities/" + city._id}>
                       <strong>
                         {city.city},  {city.country}
