@@ -17,6 +17,10 @@ export default {
     return axios.put("/api/cities/" + id, "traveled=true");
   },
 
+  placesCity: function(query) {
+    return axios.post("https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+" + query + "&key=AIzaSyBPq0iNfSB-GG2vKi06_v7MvoEluekscfY");
+  },
+
   saveCity: function(cityData) {
     return axios.post("/api/cities", cityData);
   },
