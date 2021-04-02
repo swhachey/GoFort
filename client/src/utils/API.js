@@ -13,8 +13,8 @@ export default {
     return axios.delete("/api/cities/" + id);
   },
 
-  travelCity: function(cityData) {
-    return axios.put("/api/cities/", cityData);
+  travelCity: function(id) {
+    return axios.put("/api/cities/" + id, "traveled=true");
   },
 
   saveCity: function(cityData) {
