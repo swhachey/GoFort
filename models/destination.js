@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const destinationSchema = new Schema({
   city: { type: String, required: true },
   country: { type: String },
-  visited: Boolean,
+  traveled: { type:Boolean, default: false },
   info: { type: String }
 
 });
