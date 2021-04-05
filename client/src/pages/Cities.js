@@ -99,7 +99,8 @@ function deleteCity(id) {
                     </Link>
                   
                     <div>
-                    <ViewBtn link={"https://en.wikipedia.org/wiki/" + city.city}/>
+                    <ViewBtn link={"https://en.wikipedia.org/wiki/" + city.city} use="MORE INFO" btncolor="btn btn-primary"/>
+                    <ViewBtn link={"https://unsplash.com/s/photos/" + city.city} use="MORE PICS" btncolor="btn btn-secondary"/>
                 
                     <TraveledBtn onClick={()=>handleTravel(city._id)}/>
                   
