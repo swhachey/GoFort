@@ -43,7 +43,8 @@ const [cities, setCities] = useState([])
                       </strong>
                     </Link>
                     <div>
-                    <ViewBtn link={"https://en.wikipedia.org/wiki/" + city.city}/>
+                    <ViewBtn link={"https://en.wikipedia.org/wiki/" + city.city} use="MORE INFO" btncolor="btn btn-primary"/>
+                    <ViewBtn link={"https://unsplash.com/s/photos/" + city.city} use="MORE PICS" btncolor="btn btn-secondary"/>
                     <br/>
                   <DeleteBtn onClick={() => deleteCity(city._id)} />
                   </div>
