@@ -7,21 +7,23 @@ import AuthNav from '../AuthNav/AuthNav'
 function NavBar() {
     return (
  <Nav variant="tabs" defaultActiveKey="/home" className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <Nav.Item>
-    <Link to="/">
+   <Link to="/">
+  <Nav.Item> 
     <Nav.Link className="navlink" style={{fontFamily: "Carter One", fontSize: "16px"}}>GoFort</Nav.Link>
-    </Link>
   </Nav.Item>
-  <Nav.Item>
-    <Link to="/traveled">
+  </Link>
+
+  <Link to="/traveled">
+  <Nav.Item>  
     <Nav.Link eventKey="link-1" className="navlink">Traveled</Nav.Link>
-    </Link>
   </Nav.Item>
-  <Nav.Item>
-    <Link to="/chat">
+    </Link>
+
+ <Link to="/chat">
+  <Nav.Item> 
     <Nav.Link eventKey="link-2" className="navlink">Chat</Nav.Link>
-    </Link>
   </Nav.Item>
+    </Link>
   <Nav.Item position = "right">
     <AuthNav/>
   </Nav.Item>
